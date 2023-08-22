@@ -10,8 +10,12 @@ from bot import get_historical_data
 import requests
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+from dotenv import load_dotev
+import os
 
-bot = telebot.TeleBot('6606995042:AAGeniL4l_585DAc8Vt0HwoUQ60ZE7ahGO0')
+load_dotev()
+TOKEN = os.getenv('TOKEN')
+bot = telebot.TeleBot(TOKEN)
 
 
 @bot.message_handler(commands=['start'])
